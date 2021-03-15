@@ -7,7 +7,7 @@
     tools:context=".ui.activities.MainActivity">
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/physiciansButton"
         android:layout_width="129dp"
         android:layout_height="48dp"
         android:layout_marginTop="24dp"
@@ -17,11 +17,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/patientsButton"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/patientsButton"
         android:layout_width="129dp"
         android:layout_height="48dp"
         android:layout_marginStart="162dp"
@@ -36,7 +36,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/appointmentsButton"
         android:layout_width="147dp"
         android:layout_height="51dp"
         android:layout_marginStart="162dp"
@@ -48,5 +48,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/physiciansButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>
