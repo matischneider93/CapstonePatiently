@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private Button patientsButton;
     private Button appointmentsButton;
 
-    private boolean loggedIn = false;
+    private boolean loggedIn = true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,14 +29,12 @@ public class MainActivity extends AppCompatActivity {
                 openPhysiciansActivity();
             }
         });
-
         patientsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openPatientsActivity();
             }
         });
-
         appointmentsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
 
     // Button Functions for Screens
     public void openPhysiciansActivity(){
