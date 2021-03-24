@@ -30,16 +30,14 @@ public class AppointmentsActivity extends AppCompatActivity {
 
         appointmentAddButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(this, AppointmentAddActivity.class);
-                startActivity(intent);
+
             }
         });
 
         appointmentEditButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(this, AppointmentEditActivity.class);
-                startActivity(intent);
+
             }
         });
 
@@ -53,8 +51,7 @@ public class AppointmentsActivity extends AppCompatActivity {
         appointmentDetailButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(this, AppointmentDetailActivity.class);
-                startActivity(intent);
+
             }
         });
     }

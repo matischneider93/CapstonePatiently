@@ -29,16 +29,14 @@ public class PatientsActivity extends AppCompatActivity {
 
         patientAddButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(this, PatientAddActivity.class);
-                startActivity(intent);
+
             }
         });
 
         patientEditButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(this, PatientEditActivity.class);
-                startActivity(intent);
+
             }
         });
 
@@ -52,8 +50,7 @@ public class PatientsActivity extends AppCompatActivity {
         patientDetailButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(this, PatientDetailActivity.class);
-                startActivity(intent);
+
             }
         });
 

@@ -30,16 +30,14 @@ public class PhysiciansActivity extends AppCompatActivity {
 
         physicianAddButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(this, PhysicianAddActivity.class);
-                startActivity(intent);
+
             }
         });
 
         physicianEditButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(this, PhysicianEditActivity.class);
-                startActivity(intent);
+
             }
         });
 
@@ -53,8 +51,7 @@ public class PhysiciansActivity extends AppCompatActivity {
         physicianDetailButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(this, PhysicianDetailActivity.class);
-                startActivity(intent);
+
             }
         });
 
