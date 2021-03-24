@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="patientDetailButton" type="id" />
+    <item name="physicianDetailButton" type="id" />
+    <item name="appointmentDetailButton" type="id" />
+</resources>

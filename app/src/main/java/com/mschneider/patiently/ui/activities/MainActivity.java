@@ -53,8 +53,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, PatientsActivity.class);
         startActivity(intent);
     }
-    public void openAppointmentsActivity(){
+    public void openAppointmentsActivity() {
         Intent intent = new Intent(this, AppointmentsActivity.class);
-        startActivity(intent);
     }
 }
