@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         appointmentsButton = (Button) findViewById(R.id.appointmentsButton);
 
         // when upgrading versions, kill the original tables by using fallbackToDestructiveMigration()
-        appDatabase = Room.databaseBuilder(this, AppDatabase.class, AppDatabase.NAME).fallbackToDestructiveMigration().build();
+        appDatabase = Room.databaseBuilder(this, AppDatabase.class, AppDatabase.DATABASE_NAME).fallbackToDestructiveMigration().build();
 
         physiciansButton.setOnClickListener(new View.OnClickListener() {
             @Override
