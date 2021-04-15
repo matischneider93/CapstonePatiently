@@ -19,7 +19,7 @@ import com.mschneider.patiently.models.Physician;
 public abstract class AppDatabase extends RoomDatabase {
 
     public static final String DATABASE_NAME = "AppDatabase.db";
-    private static volatile Database databaseInstance;
+    private static volatile AppDatabase databaseInstance;
     private static final Object LOCK = new Object();
 
     public abstract PhysicianDao physicianDao();
@@ -27,12 +27,12 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract AppointmentDao appointmentDao();
 
 
-    public static Database getDatabaseInstance(Context context) {
+    public static AppDatabase getDatabaseInstance(Context context) {
 
         if (databaseInstance == null) {
             synchronized (LOCK) {
                 if (databaseInstance == null) {
-                    databaseInstance = (Database) Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, DATABASE_NAME)
+                    databaseInstance = (AppDatabase) Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, DATABASE_NAME)
                             .fallbackToDestructiveMigration()
                             .addCallback(roomCallBack)
                             .build();
@@ -51,6 +51,28 @@ public abstract class AppDatabase extends RoomDatabase {
 
         }
     };
+
+    private static class PopulateDbAsyncTask extends AsyncTask<Void, Void, Void> {
+
+        private PhysicianDao physicianDao;
+        private PatientDao patientDao;
+        private AppointmentDao appointmentDao;
+
+
+        private PopulateDbAsyncTask(AppDatabase db) {
+
+            physicianDao = db.physicianDao();
+            patientDao = db.patientDao();
+            appointmentDao = db.appointmentDao();
+
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+
+            return null;
+        }
+    }
 
 
 

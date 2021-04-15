@@ -10,16 +10,16 @@ import android.widget.Button;
 
 import com.mschneider.patiently.R;
 import com.mschneider.patiently.databases.AppDatabase;
+import com.mschneider.patiently.models.Physician;
 
 public class MainActivity extends AppCompatActivity {
 
-    AppDatabase appDatabase;
+   public static AppDatabase appDatabase;
 
     private Button physiciansButton;
     private Button patientsButton;
     private Button appointmentsButton;
 
-    private boolean loggedIn = true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +29,9 @@ public class MainActivity extends AppCompatActivity {
         appointmentsButton = (Button) findViewById(R.id.appointmentsButton);
 
         // when upgrading versions, kill the original tables by using fallbackToDestructiveMigration()
-        appDatabase = Room.databaseBuilder(this, AppDatabase.class, AppDatabase.DATABASE_NAME).fallbackToDestructiveMigration().build();
+        appDatabase = Room.databaseBuilder(this, AppDatabase.class,
+                AppDatabase.DATABASE_NAME).allowMainThreadQueries().build();
+        appDatabase.physicianDao().insertPhysician(new Physician(1,"bob","","","",""));
 
         physiciansButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 openAppointmentsActivity();
             }
         });
+
 
     }
 

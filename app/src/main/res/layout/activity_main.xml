@@ -8,10 +8,11 @@
 
     <Button
         android:id="@+id/physiciansButton"
-        android:layout_width="129dp"
-        android:layout_height="48dp"
+        android:layout_width="168dp"
+        android:layout_height="51dp"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="417dp"
+        android:backgroundTint="#2196F3"
         android:text="Physicians"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,12 +23,13 @@
 
     <Button
         android:id="@+id/patientsButton"
-        android:layout_width="129dp"
-        android:layout_height="48dp"
+        android:layout_width="167dp"
+        android:layout_height="43dp"
         android:layout_marginStart="162dp"
         android:layout_marginTop="194dp"
         android:layout_marginEnd="161dp"
         android:layout_marginBottom="489dp"
+        android:backgroundTint="#2196F3"
         android:text="Patients"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,12 +39,13 @@
 
     <Button
         android:id="@+id/appointmentsButton"
-        android:layout_width="147dp"
-        android:layout_height="51dp"
+        android:layout_width="173dp"
+        android:layout_height="56dp"
         android:layout_marginStart="162dp"
         android:layout_marginTop="29dp"
         android:layout_marginEnd="161dp"
         android:layout_marginBottom="340dp"
+        android:backgroundTint="#2196F3"
         android:text="Appointments"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

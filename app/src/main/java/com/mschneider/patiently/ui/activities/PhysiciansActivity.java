@@ -28,6 +28,7 @@ public class PhysiciansActivity extends AppCompatActivity {
         setContentView(R.layout.activity_physicians);
 
 
+
         physicianAddButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
