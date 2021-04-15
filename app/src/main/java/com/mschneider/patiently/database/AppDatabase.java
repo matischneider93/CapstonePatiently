@@ -1,6 +1,5 @@
-package com.mschneider.patiently.databases;
+package com.mschneider.patiently.database;
 
-import android.app.Application;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
@@ -11,6 +10,9 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
+import com.mschneider.patiently.database.dao.AppointmentDao;
+import com.mschneider.patiently.database.dao.PatientDao;
+import com.mschneider.patiently.database.dao.PhysicianDao;
 import com.mschneider.patiently.models.Appointment;
 import com.mschneider.patiently.models.Patient;
 import com.mschneider.patiently.models.Physician;

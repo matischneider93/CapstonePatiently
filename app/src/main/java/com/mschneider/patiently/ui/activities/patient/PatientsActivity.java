@@ -1,4 +1,4 @@
-package com.mschneider.patiently.ui.activities;
+package com.mschneider.patiently.ui.activities.patient;
 
 import androidx.appcompat.app.AppCompatActivity;
 

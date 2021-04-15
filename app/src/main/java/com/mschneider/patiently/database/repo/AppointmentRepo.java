@@ -1,12 +1,13 @@
-package com.mschneider.patiently.databases;
+package com.mschneider.patiently.database.repo;
 
 import android.app.Application;
 import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
 
+import com.mschneider.patiently.database.AppDatabase;
+import com.mschneider.patiently.database.dao.AppointmentDao;
 import com.mschneider.patiently.models.Appointment;
-import com.mschneider.patiently.models.Patient;
 
 import java.util.List;
 

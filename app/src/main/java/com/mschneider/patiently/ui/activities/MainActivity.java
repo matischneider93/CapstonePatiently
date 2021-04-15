@@ -9,8 +9,10 @@ import android.view.View;
 import android.widget.Button;
 
 import com.mschneider.patiently.R;
-import com.mschneider.patiently.databases.AppDatabase;
-import com.mschneider.patiently.models.Physician;
+import com.mschneider.patiently.database.AppDatabase;
+import com.mschneider.patiently.ui.activities.appointment.AppointmentsActivity;
+import com.mschneider.patiently.ui.activities.patient.PatientsActivity;
+import com.mschneider.patiently.ui.activities.physician.PhysiciansActivity;
 
 public class MainActivity extends AppCompatActivity {
 

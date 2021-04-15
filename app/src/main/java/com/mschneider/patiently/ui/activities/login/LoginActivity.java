@@ -1,4 +1,4 @@
-package com.mschneider.patiently.ui.activities;
+package com.mschneider.patiently.ui.activities.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.mschneider.patiently.R;
+import com.mschneider.patiently.ui.activities.MainActivity;
 
 public class LoginActivity extends AppCompatActivity {
     private boolean loggedIn;
@@ -33,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
                     loggedIn = false;
                 } else {
                     loggedIn = true;
-                    Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     intent.putExtra("login_status", loggedIn);
                     startActivity(intent);
                 }

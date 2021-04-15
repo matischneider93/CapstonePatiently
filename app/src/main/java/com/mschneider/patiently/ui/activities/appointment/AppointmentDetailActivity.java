@@ -1,4 +1,4 @@
-package com.mschneider.patiently.ui.activities;
+package com.mschneider.patiently.ui.activities.appointment;
 
 import android.os.Bundle;
 
@@ -6,10 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.mschneider.patiently.R;
 
-public class PatientDetailActivity extends AppCompatActivity {
+public class AppointmentDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_patient_detail);
+        setContentView(R.layout.activity_appointment_detail);
     }
 }

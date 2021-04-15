@@ -1,4 +1,4 @@
-package com.mschneider.patiently.databases;
+package com.mschneider.patiently.database.dao;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;

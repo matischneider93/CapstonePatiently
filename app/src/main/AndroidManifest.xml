@@ -9,11 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Patiently">
-        <activity android:name=".ui.activities.ReportsActivity"></activity>
-        <activity android:name=".ui.activities.AppointmentsActivity" />
-        <activity android:name=".ui.activities.PhysiciansActivity" />
-        <activity android:name=".ui.activities.PatientsActivity" />
-        <activity android:name=".ui.activities.LoginActivity" />
+        <activity android:name=".ui.activities.report.ReportsActivity"></activity>
+        <activity android:name=".ui.activities.appointment.AppointmentsActivity" />
+        <activity android:name=".ui.activities.physician.PhysiciansActivity" />
+        <activity android:name=".ui.activities.patient.PatientsActivity" />
+        <activity android:name=".ui.activities.login.LoginActivity" />
         <activity android:name=".ui.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

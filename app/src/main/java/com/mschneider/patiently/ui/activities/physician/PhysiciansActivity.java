@@ -1,18 +1,18 @@
-package com.mschneider.patiently.ui.activities;
+package com.mschneider.patiently.ui.activities.physician;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ListView;
 
 import com.mschneider.patiently.R;
+import com.mschneider.patiently.database.repo.PhysicianRepo;
 import com.mschneider.patiently.models.Physician;
+import com.mschneider.patiently.ui.activities.MainActivity;
 import com.mschneider.patiently.ui.adapters.PhysicianAdapter;
 
 import java.util.List;
@@ -33,7 +33,9 @@ public class PhysiciansActivity extends AppCompatActivity {
         setContentView(R.layout.activity_physicians);
         physiciansRecyclerView.setHasFixedSize(true);
         physiciansRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+        PhysicianRepo repo = new PhysicianRepo(getApplication());
+        repo.getAllPhysicians();
+        physiciansRecyclerView.setAdapter(new PhysicianAdapter());
         getData();
 
 

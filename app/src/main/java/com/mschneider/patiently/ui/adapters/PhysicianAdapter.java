@@ -9,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.mschneider.patiently.R;
-import com.mschneider.patiently.databases.PhysicianRepo;
 import com.mschneider.patiently.models.Physician;
 
 import java.util.List;

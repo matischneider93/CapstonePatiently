@@ -1,10 +1,12 @@
-package com.mschneider.patiently.databases;
+package com.mschneider.patiently.database.repo;
 
 import android.app.Application;
 import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
 
+import com.mschneider.patiently.database.AppDatabase;
+import com.mschneider.patiently.database.dao.PhysicianDao;
 import com.mschneider.patiently.models.Physician;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.mschneider.patiently.databases;
+package com.mschneider.patiently.database.dao;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -7,7 +7,6 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
-import com.mschneider.patiently.models.Patient;
 import com.mschneider.patiently.models.Physician;
 
 import java.util.List;
