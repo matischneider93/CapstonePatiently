@@ -2,78 +2,51 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.activities.PhysiciansActivity">
 
-    <ListView
-        android:id="@+id/physiciansListView"
-        android:layout_width="335dp"
-        android:layout_height="440dp"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="38dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/physicianAddButton"
-        app:layout_constraintEnd_toEndOf="parent"
+    <Button
+        android:id="@+id/button_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="448dp"
+        android:text="Add Data"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/physicianDetailButton"
+        android:id="@+id/button_read"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="141dp"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="182dp"
-        android:layout_marginBottom="111dp"
-        android:text="Detail"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="276dp"
+        android:layout_marginTop="324dp"
+        android:text="Read Data"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/physicianEditButton" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/physicianAddButton"
+        android:id="@+id/button_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginBottom="177dp"
-        android:text="Add"
+        android:layout_marginBottom="364dp"
+        android:text="Delete Data"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/physicianEditButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/physiciansListView" />
-
-    <Button
-        android:id="@+id/physicianDeleteButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="21dp"
-        android:layout_marginBottom="177dp"
-        android:text="Delete"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/physicianEditButton"
-        app:layout_constraintTop_toBottomOf="@+id/physiciansListView" />
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <Button
         android:id="@+id/physicianEditButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginBottom="19dp"
-        android:text="Edit"
-        app:layout_constraintBottom_toTopOf="@+id/physicianDetailButton"
-        app:layout_constraintEnd_toStartOf="@+id/physicianDeleteButton"
-        app:layout_constraintStart_toEndOf="@+id/physicianAddButton"
-        app:layout_constraintTop_toBottomOf="@+id/physiciansListView" />
-
+        android:layout_marginBottom="232dp"
+        android:text="Update Data"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

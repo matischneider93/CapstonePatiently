@@ -15,15 +15,13 @@ import com.mschneider.patiently.models.Physician;
 public class MainActivity extends AppCompatActivity {
 
    public static AppDatabase appDatabase;
-
-    private Button physiciansButton;
-    private Button patientsButton;
-    private Button appointmentsButton;
+   private Button physiciansButton, patientsButton, appointmentsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         physiciansButton = (Button) findViewById(R.id.physiciansButton);
         patientsButton = (Button) findViewById(R.id.patientsButton);
         appointmentsButton = (Button) findViewById(R.id.appointmentsButton);
@@ -31,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
         // when upgrading versions, kill the original tables by using fallbackToDestructiveMigration()
         appDatabase = Room.databaseBuilder(this, AppDatabase.class,
                 AppDatabase.DATABASE_NAME).allowMainThreadQueries().build();
-        appDatabase.physicianDao().insertPhysician(new Physician(1,"bob","","","",""));
 
         physiciansButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +65,5 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AppointmentsActivity.class);
     }
 
-    public AppDatabase getAppDatabase() {
-        return appDatabase;
-    }
+
 }

@@ -3,4 +3,9 @@
     <item name="patientDetailButton" type="id" />
     <item name="physicianDetailButton" type="id" />
     <item name="appointmentDetailButton" type="id" />
+    <item name="physicianAddButton" type="id" />
+    <item name="physicianDeleteButton" type="id" />
+    <item name="physiciansRecyclerView" type="id" />
+    <item name="physicianIdText" type="id" />
+    <item name="physicianEmailText" type="id" />
 </resources>

@@ -1,31 +1,40 @@
 package com.mschneider.patiently.ui.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 
 import com.mschneider.patiently.R;
+import com.mschneider.patiently.models.Physician;
+import com.mschneider.patiently.ui.adapters.PhysicianAdapter;
+
+import java.util.List;
 
 public class PhysiciansActivity extends AppCompatActivity {
-    private ListView physiciansListView;
-    private Button physicianAddButton;
-    private Button physicianEditButton;
-    private Button physicianDeleteButton;
-    private Button physicianDetailButton;
+    private RecyclerView physiciansRecyclerView;
+    private Button physicianAddButton, physicianEditButton,
+    physicianDeleteButton,physicianDetailButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        physiciansListView = findViewById(R.id.physiciansListView);
+        physiciansRecyclerView = findViewById(R.id.physiciansRecyclerView);
         physicianAddButton = findViewById(R.id.physicianAddButton);
         physicianEditButton = findViewById(R.id.physicianEditButton);
         physicianDeleteButton = findViewById(R.id.physicianDeleteButton);
         physicianDetailButton = findViewById(R.id.physicianDetailButton);
         setContentView(R.layout.activity_physicians);
+        physiciansRecyclerView.setHasFixedSize(true);
+        physiciansRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        getData();
 
 
 
@@ -60,6 +69,26 @@ public class PhysiciansActivity extends AppCompatActivity {
         
     }
 
+    private void getData() {
+        class GetData extends AsyncTask<Void,Void,List<Physician>> {
 
+            @Override
+            protected List<Physician> doInBackground(Void... voids) {
+                List<Physician>myDataLists=
+                        (List<Physician>) MainActivity.appDatabase.physicianDao().getAllPhysicians();
 
+                return myDataLists;
+
+            }
+
+            @Override
+            protected void onPostExecute(List<Physician> physiciansList) {
+                PhysicianAdapter adapter=new PhysicianAdapter(physiciansList);
+                physiciansRecyclerView.setAdapter(adapter);
+                super.onPostExecute(physiciansList);
+            }
+        }
+        GetData gd=new GetData();
+        gd.execute();
+    }
 }
