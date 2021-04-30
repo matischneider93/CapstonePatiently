@@ -17,6 +17,9 @@ import com.mschneider.patiently.models.Appointment;
 import com.mschneider.patiently.models.Patient;
 import com.mschneider.patiently.models.Physician;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 @Database(entities={Patient.class, Physician.class, Appointment.class}, version=1)
 public abstract class AppDatabase extends RoomDatabase {
 
@@ -27,18 +30,21 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract PhysicianDao physicianDao();
     public abstract PatientDao patientDao();
     public abstract AppointmentDao appointmentDao();
+    private static final int NO_OF_THREADS = 4;
+
+    static final ExecutorService dbWriteExecutor = Executors.newFixedThreadPool(NO_OF_THREADS);
+
+
 
 
     public static AppDatabase getDatabaseInstance(Context context) {
-
         if (databaseInstance == null) {
-            synchronized (LOCK) {
+            synchronized (AppDatabase.class) {
                 if (databaseInstance == null) {
-                    databaseInstance = (AppDatabase) Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, DATABASE_NAME)
-                            .fallbackToDestructiveMigration()
+                    databaseInstance = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, "patiently.db").allowMainThreadQueries().
+                            fallbackToDestructiveMigration()
                             .addCallback(roomCallBack)
                             .build();
-                    Toast.makeText(context, "Database being created", Toast.LENGTH_SHORT).show();
                 }
             }
         }
@@ -49,19 +55,18 @@ public abstract class AppDatabase extends RoomDatabase {
         @Override
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db);
-
-
+            new PopulateDbAsyncTask(databaseInstance).execute();
         }
     };
 
     private static class PopulateDbAsyncTask extends AsyncTask<Void, Void, Void> {
 
-        private PhysicianDao physicianDao;
-        private PatientDao patientDao;
-        private AppointmentDao appointmentDao;
+        public PhysicianDao physicianDao;
+        public PatientDao patientDao;
+        public AppointmentDao appointmentDao;
 
 
-        private PopulateDbAsyncTask(AppDatabase db) {
+        public PopulateDbAsyncTask(AppDatabase db) {
 
             physicianDao = db.physicianDao();
             patientDao = db.patientDao();
@@ -71,6 +76,7 @@ public abstract class AppDatabase extends RoomDatabase {
 
         @Override
         protected Void doInBackground(Void... voids) {
+
 
             return null;
         }

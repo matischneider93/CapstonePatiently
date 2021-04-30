@@ -4,75 +4,46 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.mschneider.patiently.R;
+import com.mschneider.patiently.database.repo.PhysicianRepo;
+import com.mschneider.patiently.database.view_models.PhysicianViewModel;
 import com.mschneider.patiently.models.Physician;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
-public class PhysicianAdapter extends RecyclerView.Adapter<PhysicianAdapter.PhysicianViewHolder> {
+public class PhysicianAdapter extends ArrayAdapter<Physician> {
+    public PhysicianAdapter(Context context, ArrayList<Physician> physicians) {
+        super(context, 0, physicians);
 
-    private final LayoutInflater mInflater;
-    private List<Physician> mPhysicians; // Cached copy of words
 
-    PhysicianAdapter(Context context) { mInflater = LayoutInflater.from(context); }
-
-    @Override
-    public PhysicianViewHolder onCreateViewHolder(ViewGroup parent,
-                                                  int viewType) {
-        View itemView = mInflater.inflate(R.layout.list_physicians, parent, false);
-        return new PhysicianViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(PhysicianViewHolder holder, int position) {
-        if (mPhysicians != null) {
-            Physician current = mPhysicians.get(position);
-            holder.physicianIdTextView.setText(current.getPhysicianId());
-            holder.physicianNameTextView.setText(current.getFirstName() + " " + current.getLastName());
-            holder.physicianEmailTextView.setText(current.getEmail());
-            holder.physicianSpecialityTextView.setText(current.getSpeciality());
+    public View getView(int position, View convertView, ViewGroup parent) {
+        // Get the data item for this position
+        Physician physician = getItem(position);
+        // Check if an existing view is being reused, otherwise inflate the view
+        if (convertView == null) {
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_physician, parent, false);
 
-        } else {
-            // Covers the case of data not being ready yet.
-            holder.physicianIdTextView.setText("N/A");
-            holder.physicianNameTextView.setText("N/A");
-            holder.physicianEmailTextView.setText("N/A");
-            holder.physicianSpecialityTextView.setText("N/A");
         }
-    }
-
-    void setPhysicians(List<Physician> physicians){
-        mPhysicians = physicians;
-        notifyDataSetChanged();
-    }
-
-    // getItemCount() is called many times, and when it is first called,
-    // mWords has not been updated (means initially, it's null, and we can't return null).
-    @Override
-    public int getItemCount() {
-        if (mPhysicians != null)
-            return mPhysicians.size();
-        else return 0;
-    }
-
-    class PhysicianViewHolder extends RecyclerView.ViewHolder {
-        private final TextView physicianIdTextView;
-        private final TextView physicianNameTextView;
-        private final TextView physicianEmailTextView;
-        private final TextView physicianSpecialityTextView;
-
-        private PhysicianViewHolder(View itemView) {
-            super(itemView);
-            physicianIdTextView = itemView.findViewById(R.id.physicianIdText);
-            physicianNameTextView = itemView.findViewById(R.id.physicianNameText);
-            physicianEmailTextView = itemView.findViewById(R.id.physicianEmailText);
-            physicianSpecialityTextView = itemView.findViewById(R.id.physicianSpecialtyText);
-        }
+        // Lookup view for data population
+        TextView physicianIdTextView = (TextView) convertView.findViewById(R.id.physicianNameTextView);
+        TextView physicianNameTextView = (TextView) convertView.findViewById(R.id.physicianNameTextView);
+        // Populate the data into the template view using the data object
+        physicianIdTextView.setText(physician.physicianId);
+        physicianNameTextView.setText(physician.firstName + " " + physician.lastName);
+        // Return the completed view to render on screen
+        return convertView;
     }
 }
+

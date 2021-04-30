@@ -2,11 +2,12 @@ package com.mschneider.patiently.models;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "physicians")
 public class Physician {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     public int physicianId;
     @ColumnInfo(name = "first_name")
     public String firstName;
@@ -19,6 +20,7 @@ public class Physician {
     @ColumnInfo(name = "speciality")
     public String speciality;
 
+    @Ignore
     public Physician(int physicianId, String firstName, String lastName, String email, String phone, String speciality) {
         this.physicianId = physicianId;
         this.firstName = firstName;
@@ -26,6 +28,22 @@ public class Physician {
         this.email = email;
         this.phone = phone;
         this.speciality = speciality;
+    }
+    @Ignore
+    public Physician(String firstName, String lastName, String email, String phone, String speciality) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phone = phone;
+        this.speciality = speciality;
+    }
+
+    public Physician() {
+        this.firstName = "N/A";
+        this.lastName = "N/A";
+        this.email = "N/A";
+        this.phone = "N/A";
+        this.speciality = "N/A";
     }
 
     public int getPhysicianId() {
