@@ -15,7 +15,7 @@ import java.util.List;
 
 public class PhysicianViewModel extends AndroidViewModel {
     private PhysicianRepo mRepository;
-    public LiveData<List<Physician>> mAllPhysicians;
+    public List<Physician> mAllPhysicians;
 
 
 
@@ -27,7 +27,7 @@ public class PhysicianViewModel extends AndroidViewModel {
     }
 
 
-    public LiveData<List<Physician>> getAllPhysicians() { return mAllPhysicians; }
+    public List<Physician> getAllPhysicians() { return mAllPhysicians; }
 
     public void insert(Physician physician) { mRepository.insertPhysician(physician); }
 

@@ -13,7 +13,7 @@ import java.util.List;
 
 public class AppointmentRepo {
     private AppointmentDao appointmentDao;
-    private LiveData<List<Appointment>> allAppointments;
+    private List<Appointment> allAppointments;
 
 
     public AppointmentRepo(Application application){
@@ -42,7 +42,7 @@ public class AppointmentRepo {
 
 
     //Get methods
-    public LiveData<List<Appointment>> getAllAppointments(){
+    public List<Appointment> getAllAppointments(){
         return allAppointments;
     }
 

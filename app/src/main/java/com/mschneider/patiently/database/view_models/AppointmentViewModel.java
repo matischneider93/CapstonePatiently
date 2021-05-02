@@ -16,7 +16,7 @@ public class AppointmentViewModel extends AndroidViewModel {
 
     private AppointmentRepo mRepository;
 
-    private LiveData<List<Appointment>> mAllAppointments;
+    private List<Appointment> mAllAppointments;
 
     public AppointmentViewModel (Application application) {
         super(application);
@@ -24,7 +24,7 @@ public class AppointmentViewModel extends AndroidViewModel {
         mAllAppointments = mRepository.getAllAppointments();
     }
 
-    LiveData<List<Appointment>> getAllAppointments() { return mAllAppointments; }
+    List<Appointment> getAllAppointments() { return mAllAppointments; }
 
     public void insert(Appointment appointment) { mRepository.insertAppointment(appointment); }
 }

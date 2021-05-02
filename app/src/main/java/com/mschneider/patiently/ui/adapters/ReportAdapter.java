@@ -8,32 +8,28 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.mschneider.patiently.R;
-import com.mschneider.patiently.database.AppDatabase;
-import com.mschneider.patiently.ui.activities.MainActivity;
 
 import java.util.ArrayList;
-import java.util.List;
 
+public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ViewHolder> {
 
-public class PhysicianAdapter extends RecyclerView.Adapter<PhysicianAdapter.ViewHolder> {
-
-    private List<String> physiciansList;
+    private ArrayList<String> namesList;
 
     /**
      * Provide a reference to the type of views that you are using
      * (custom ViewHolder).
      */
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private final TextView physicianFirstNameTextView;
+        private final TextView firstNameTextView;
 
         public ViewHolder(View view) {
             super(view);
             // Define click listener for the ViewHolder's View
-            physicianFirstNameTextView = (TextView) view.findViewById(R.id.physicianFirstNameTextView);;
+            firstNameTextView = (TextView) view.findViewById(R.id.firstNameTextView);
         }
 
-        public TextView getPhysicianFirstNameTextView() {
-            return physicianFirstNameTextView;
+        public TextView getFirstNameTextView() {
+            return firstNameTextView;
         }
     }
 
@@ -42,10 +38,9 @@ public class PhysicianAdapter extends RecyclerView.Adapter<PhysicianAdapter.View
      *
      *
      * by RecyclerView.
-     * @param physicians
      */
-    public PhysicianAdapter(List<String> physicians) {
-        physiciansList = physicians;
+    public ReportAdapter(ArrayList<String> firstNames) {
+        namesList = firstNames;
 
     }
 
@@ -54,7 +49,7 @@ public class PhysicianAdapter extends RecyclerView.Adapter<PhysicianAdapter.View
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         // Create a new view, which defines the UI of the list item
         View view = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.physician_row_item, viewGroup, false);
+                .inflate(R.layout.report_row_item, viewGroup, false);
 
         return new ViewHolder(view);
     }
@@ -65,12 +60,12 @@ public class PhysicianAdapter extends RecyclerView.Adapter<PhysicianAdapter.View
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        viewHolder.getPhysicianFirstNameTextView().setText(physiciansList.get(position));
+        viewHolder.getFirstNameTextView().setText(namesList.get(position));
     }
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return physiciansList.size();
+        return namesList.size();
     }
 }

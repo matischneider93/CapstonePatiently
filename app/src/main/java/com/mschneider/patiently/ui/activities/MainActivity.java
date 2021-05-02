@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
 import android.content.Intent;
@@ -21,7 +23,9 @@ import com.mschneider.patiently.ui.activities.appointment.AppointmentsActivity;
 import com.mschneider.patiently.ui.activities.patient.PatientsActivity;
 import com.mschneider.patiently.ui.activities.physician.PhysiciansActivity;
 import com.mschneider.patiently.ui.activities.reports.ReportsActivity;
+import com.mschneider.patiently.ui.adapters.PhysicianAdapter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,15 +36,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        System.out.println("bob");
+
         setContentView(R.layout.activity_main);
         Button physiciansButton, patientsButton, appointmentsButton, reportsButton;
         physiciansButton = (Button) findViewById(R.id.physiciansButton);
         patientsButton = (Button) findViewById(R.id.patientsButton);
         appointmentsButton = (Button) findViewById(R.id.appointmentsButton);
         reportsButton = (Button) findViewById(R.id.reportsButton);
+
         // when upgrading versions, kill the original tables by using fallbackToDestructiveMigration()
         appDatabase = AppDatabase.getDatabaseInstance(getApplicationContext());
+
+
 
 
         physiciansButton.setOnClickListener(new View.OnClickListener() {

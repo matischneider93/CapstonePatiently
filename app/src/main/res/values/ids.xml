@@ -8,4 +8,5 @@
     <item name="physiciansRecyclerView" type="id" />
     <item name="physicianIdText" type="id" />
     <item name="physicianEmailText" type="id" />
+    <item name="firstNameTextView" type="id" />
 </resources>

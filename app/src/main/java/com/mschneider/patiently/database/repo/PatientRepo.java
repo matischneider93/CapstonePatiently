@@ -13,7 +13,7 @@ import java.util.List;
 
 public class PatientRepo {
     private PatientDao patientDao;
-    private LiveData<List<Patient>> allPatients;
+    private List<Patient> allPatients;
 
 
     public PatientRepo(Application application){
@@ -42,7 +42,7 @@ public class PatientRepo {
 
 
     //Get methods
-    public LiveData<List<Patient>> getAllPatients(){
+    public List<Patient> getAllPatients(){
         return allPatients;
     }
 

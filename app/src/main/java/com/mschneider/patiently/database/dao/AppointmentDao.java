@@ -26,7 +26,7 @@ public interface AppointmentDao {
     Appointment getAppointmentById(int appointmentId);
 
     @Query("SELECT * FROM appointments ORDER BY appointmentId ASC")
-    LiveData<List<Appointment>> getAllAppointments();
+    List<Appointment> getAllAppointments();
 
     @Query("DELETE FROM appointments")
     int deleteAllAppointments();

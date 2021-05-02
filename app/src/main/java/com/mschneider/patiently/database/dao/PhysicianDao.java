@@ -26,7 +26,7 @@ public interface PhysicianDao {
     Physician getPhysicianById(int physicianId);
 
     @Query("SELECT * FROM physicians ORDER BY physicianId ASC")
-    LiveData<List<Physician>> getAllPhysicians();
+    List<Physician> getAllPhysicians();
 
     @Query("DELETE FROM physicians")
     int deleteAllPhysicians();

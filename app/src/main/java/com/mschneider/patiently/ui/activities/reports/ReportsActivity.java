@@ -1,7 +1,8 @@
 package com.mschneider.patiently.ui.activities.reports;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.LiveData;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -10,29 +11,30 @@ import android.widget.ListView;
 
 import com.mschneider.patiently.R;
 import com.mschneider.patiently.database.AppDatabase;
-import com.mschneider.patiently.database.view_models.PhysicianViewModel;
+import com.mschneider.patiently.models.Patient;
 import com.mschneider.patiently.models.Physician;
 import com.mschneider.patiently.ui.activities.MainActivity;
-import com.mschneider.patiently.ui.adapters.PhysicianAdapter;
+import com.mschneider.patiently.ui.adapters.ReportAdapter;
 
-import java.io.Console;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ReportsActivity extends AppCompatActivity {
     // Array of strings...
-    ListView simpleList;
-    String countryList[] = {"India", "China", "australia", "Portugle", "America", "NewZealand"};
+    RecyclerView simpleList;
+    ArrayList<String> physicianList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reports);
-        simpleList = (ListView)findViewById(R.id.simpleListView);
-        AppDatabase db = AppDatabase.getDatabaseInstance(getApplicationContext());
-        db.physicianDao();
+        simpleList = (RecyclerView) findViewById(R.id.simpleListView);
+        AppDatabase appDatabase = MainActivity.getAppDatabase();
 
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.activity_listview, R.id.textView, countryList);
-        simpleList.setAdapter(arrayAdapter);
+
+        ReportAdapter adapter = new ReportAdapter(physicianList);
+        simpleList.setLayoutManager(new LinearLayoutManager(this));
+        simpleList.setAdapter(adapter);
 
     }
 }

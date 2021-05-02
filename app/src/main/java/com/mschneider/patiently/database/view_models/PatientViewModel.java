@@ -16,7 +16,7 @@ public class PatientViewModel extends AndroidViewModel {
 
     private PatientRepo mRepository;
 
-    private LiveData<List<Patient>> mAllPatients;
+    private List<Patient> mAllPatients;
 
     public PatientViewModel (Application application) {
         super(application);
@@ -24,7 +24,7 @@ public class PatientViewModel extends AndroidViewModel {
         mAllPatients = mRepository.getAllPatients();
     }
 
-    LiveData<List<Patient>> getAllPatients() { return mAllPatients; }
+    List<Patient> getAllPatients() { return mAllPatients; }
 
     public void insert(Patient patient) { mRepository.insertPatient(patient); }
 }
