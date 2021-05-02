@@ -8,8 +8,10 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -29,8 +31,12 @@ import java.util.List;
 
 public class PhysiciansActivity extends AppCompatActivity {
     private RecyclerView physiciansRecyclerView;
-    private List<String> physiciansList = new ArrayList<>();
-    private PhysicianViewModel physicianViewModel;
+    private List<Physician> physiciansList = new ArrayList<>();
+    private Button physicianAddButton;
+    private Button physicianEditButton;
+    private Button physicianDetailButton;
+    private Button physicianDeleteButton;
+
 
 
     @Override
@@ -39,10 +45,7 @@ public class PhysiciansActivity extends AppCompatActivity {
             setContentView(R.layout.activity_physicians);
             AppDatabase appDatabase = MainActivity.getAppDatabase();
             List<Physician> physicians = appDatabase.physicianDao().getAllPhysicians();
-            for (Physician physician : physicians){
-                physiciansList.add(physician.getFirstName());
-            }
-
+            for (Physician physician : physicians){ physiciansList.add(physician); }
 
             physiciansRecyclerView = findViewById(R.id.physiciansRecyclerView);
             physiciansRecyclerView.setHasFixedSize(true);
@@ -50,8 +53,19 @@ public class PhysiciansActivity extends AppCompatActivity {
             physiciansRecyclerView.setLayoutManager(layoutManager);
             physiciansRecyclerView.setAdapter(new PhysicianAdapter(physiciansList));
 
+            // Button Connections
+            physicianAddButton = findViewById(R.id.physicianAddButton);
 
+            physicianAddButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getApplicationContext(), PhysicianAddActivity.class);
+                    startActivity(intent);
+                }
+            });
 
         }
+
+
 
     }

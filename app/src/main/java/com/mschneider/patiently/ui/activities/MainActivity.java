@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
 
         // when upgrading versions, kill the original tables by using fallbackToDestructiveMigration()
         appDatabase = AppDatabase.getDatabaseInstance(getApplicationContext());
+        appDatabase.physicianDao().insertPhysician(new Physician("Bob", "Lala", "", "", "Back"));
+
 
 
 
@@ -78,11 +80,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
-
-    private void loadPhysiciansList() {
-        Log.d("yes", "fdjsaeda");
-
     }
 
     public static AppDatabase getAppDatabase() {

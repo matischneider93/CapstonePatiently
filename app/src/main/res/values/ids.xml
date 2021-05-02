@@ -9,4 +9,8 @@
     <item name="physicianIdText" type="id" />
     <item name="physicianEmailText" type="id" />
     <item name="firstNameTextView" type="id" />
+    <item name="physicianLastNameTextView" type="id" />
+    <item name="physicianSpecialtyTextView" type="id" />
+    <item name="physicianPhoneTextView" type="id" />
+    <item name="physicianEmailTextView" type="id" />
 </resources>

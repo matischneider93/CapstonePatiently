@@ -17,8 +17,8 @@ public class Physician {
     public String email;
     @ColumnInfo(name = "phone")
     public String phone;
-    @ColumnInfo(name = "speciality")
-    public String speciality;
+    @ColumnInfo(name = "specialty")
+    public String specialty;
 
     @Ignore
     public Physician(int physicianId, String firstName, String lastName, String email, String phone, String speciality) {
@@ -27,7 +27,7 @@ public class Physician {
         this.lastName = lastName;
         this.email = email;
         this.phone = phone;
-        this.speciality = speciality;
+        this.specialty = speciality;
     }
     @Ignore
     public Physician(String firstName, String lastName, String email, String phone, String speciality) {
@@ -35,7 +35,7 @@ public class Physician {
         this.lastName = lastName;
         this.email = email;
         this.phone = phone;
-        this.speciality = speciality;
+        this.specialty = speciality;
     }
 
     public Physician() {
@@ -43,7 +43,7 @@ public class Physician {
         this.lastName = "N/A";
         this.email = "N/A";
         this.phone = "N/A";
-        this.speciality = "N/A";
+        this.specialty = "N/A";
     }
 
     public int getPhysicianId() {
@@ -61,8 +61,8 @@ public class Physician {
     public String getPhone() {
         return phone;
     }
-    public String getSpeciality() {
-        return speciality;
+    public String getSpecialty() {
+        return specialty;
     }
 
     public void setPhysicianId(int physicianId) {
@@ -80,8 +80,8 @@ public class Physician {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-    public void setSpeciality(String speciality) {
-        this.speciality = speciality;
+    public void setSpecialty(String specialty) {
+        this.specialty = specialty;
     }
 
 }

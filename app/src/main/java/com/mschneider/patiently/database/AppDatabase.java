@@ -20,7 +20,7 @@ import com.mschneider.patiently.models.Physician;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities={Patient.class, Physician.class, Appointment.class}, version=1)
+@Database(entities={Patient.class, Physician.class, Appointment.class}, version=2)
 public abstract class AppDatabase extends RoomDatabase {
 
     public static final String DATABASE_NAME = "AppDatabase.db";
