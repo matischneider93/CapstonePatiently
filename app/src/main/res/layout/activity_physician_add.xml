@@ -155,7 +155,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/physicianUpdateButton"
+        android:id="@+id/physicianAddButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="291dp"

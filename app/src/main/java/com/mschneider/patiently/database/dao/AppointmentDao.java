@@ -34,6 +34,6 @@ public interface AppointmentDao {
     @Query("SELECT COUNT(*) FROM appointments")
     int getAppointmentCount();
 
-
-
+    @Query("DELETE FROM appointments WHERE  appointmentId =:selectedPosition")
+    void deleteAppointment(int selectedPosition);
 }

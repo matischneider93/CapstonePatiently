@@ -10,99 +10,161 @@
         android:id="@+id/physicianPhoneEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="311dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="375dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Phone"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="311dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/physicianFirstNameEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="594dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/physicianSpecialtyEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="388dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="298dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Speciality"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="388dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/physicianEmailEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="240dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="446dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Email"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="240dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/physicianLastNameEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="166dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="520dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Last Name"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="166dp" />
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Speciality:"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="403dp" />
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="403dp"
+        android:layout_marginEnd="316dp"
+        android:layout_marginBottom="309dp"
+        android:text="Specialty:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="107dp"
+        android:layout_marginEnd="305dp"
+        android:layout_marginBottom="605dp"
         android:text="First Name:"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="107dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="181dp"
+        android:layout_marginEnd="306dp"
+        android:layout_marginBottom="531dp"
         android:text="Last Name:"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="181dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="257dp"
+        android:layout_marginEnd="339dp"
+        android:layout_marginBottom="455dp"
         android:text="Email:"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="257dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="327dp"
+        android:layout_marginEnd="334dp"
+        android:layout_marginBottom="385dp"
         android:text="Phone:"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="327dp" />
-
-    <EditText
-        android:id="@+id/physicianFirstNameEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="First Name"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="92dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/physicianUpdateButton"
+        android:id="@+id/physicianAddButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Update"
-        tools:layout_editor_absoluteX="291dp"
-        tools:layout_editor_absoluteY="472dp" />
+        android:layout_marginStart="291dp"
+        android:layout_marginTop="472dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="211dp"
+        android:text="Add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

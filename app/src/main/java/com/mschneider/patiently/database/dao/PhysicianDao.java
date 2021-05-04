@@ -22,6 +22,9 @@ public interface PhysicianDao {
     @Delete
     void deletePhysicians(Physician physician);
 
+    @Query("DELETE FROM physicians WHERE physicianId = :id")
+    void deleteById(int id);
+
     @Query("SELECT * FROM physicians WHERE physicianId = :physicianId")
     Physician getPhysicianById(int physicianId);
 

@@ -11,35 +11,42 @@ import com.mschneider.patiently.R;
 import com.mschneider.patiently.database.AppDatabase;
 import com.mschneider.patiently.models.Physician;
 import com.mschneider.patiently.ui.activities.MainActivity;
+import com.mschneider.patiently.ui.activities.physician.PhysiciansActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class PhysicianAdapter extends RecyclerView.Adapter<PhysicianAdapter.ViewHolder> {
-
+    private int pos;
     private List<Physician> physiciansList;
+    private ViewHolder.OnPhysicianClickListener onPhysicianClickListener;
+
+    public PhysicianAdapter(List<Physician> physicians, ViewHolder.OnPhysicianClickListener onPhysicianClickListener){
+        this.physiciansList = physicians;
+        this.onPhysicianClickListener =  onPhysicianClickListener;
+    }
 
     /**
      * Provide a reference to the type of views that you are using
      * (custom ViewHolder).
      */
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+
         private TextView physicianFirstNameTextView;
         private TextView physicianLastNameTextView;
-
         private TextView physicianSpecialtyTextView;
+        OnPhysicianClickListener onPhysicianClickListener;
+        
 
-
-        public ViewHolder(View view) {
+        public ViewHolder(View view, OnPhysicianClickListener onPhysicianClickListener) {
             super(view);
             // Define click listener for the ViewHolder's View
             physicianFirstNameTextView = view.findViewById(R.id.physicianFirstNameTextView);
             physicianLastNameTextView = view.findViewById(R.id.physicianLastNameTextView);
             physicianSpecialtyTextView = view.findViewById(R.id.physicianSpecialtyTextView);
-
-
-
+            this.onPhysicianClickListener = onPhysicianClickListener;
+            view.setOnClickListener(this);
 
         }
 
@@ -49,9 +56,18 @@ public class PhysicianAdapter extends RecyclerView.Adapter<PhysicianAdapter.View
         public TextView getPhysicianLastNameTextView() {
             return physicianLastNameTextView;
         }
-
         public TextView getPhysicianSpecialtyTextView() {
             return physicianSpecialtyTextView;
+        }
+
+        @Override
+        public void onClick(View v) {
+            onPhysicianClickListener.onPhysicianClick(getAdapterPosition());
+        }
+
+        // Click listener for row
+        public interface OnPhysicianClickListener {
+            void onPhysicianClick(int position);
         }
 
 
@@ -75,8 +91,9 @@ public class PhysicianAdapter extends RecyclerView.Adapter<PhysicianAdapter.View
         // Create a new view, which defines the UI of the list item
         View view = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.physician_row_item, viewGroup, false);
+        
 
-        return new ViewHolder(view);
+        return new ViewHolder(view, onPhysicianClickListener);
     }
 
     // Replace the contents of a view (invoked by the layout manager)
@@ -98,4 +115,6 @@ public class PhysicianAdapter extends RecyclerView.Adapter<PhysicianAdapter.View
     public int getItemCount() {
         return physiciansList.size();
     }
+    
+    
 }

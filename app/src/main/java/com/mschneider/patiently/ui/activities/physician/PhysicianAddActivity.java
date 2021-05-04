@@ -30,7 +30,7 @@ public class PhysicianAddActivity extends AppCompatActivity {
         physicianPhoneEditText = findViewById(R.id.physicianPhoneEditText);
         physicianEmailEditText = findViewById(R.id.physicianEmailEditText);
         physicianSpecialtyEditText = findViewById(R.id.physicianSpecialtyEditText);
-        physicianUpdateButton = findViewById(R.id.physicianUpdateButton);
+        physicianUpdateButton = findViewById(R.id.physicianAddButton);
 
 
         physicianUpdateButton.setOnClickListener(new View.OnClickListener() {
