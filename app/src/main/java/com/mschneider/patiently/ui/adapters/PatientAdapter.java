@@ -40,6 +40,33 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.ViewHold
 
         OnPatientClickListener onPatientClickListener;
 
+        public TextView getPatientFirstNameTextView() {
+            return patientFirstNameTextView;
+        }
+
+        public TextView getPatientLastNameTextView() {
+            return patientLastNameTextView;
+        }
+
+        public TextView getPatientEmailTextView() {
+            return patientEmailTextView;
+        }
+
+        public TextView getPatientPhoneTextView() {
+            return patientPhoneTextView;
+        }
+
+        public TextView getPatientBloodTypeTextView() {
+            return patientBloodTypeTextView;
+        }
+
+        public TextView getPatientVaccinatedTextView() {
+            return patientVaccinatedTextView;
+        }
+
+        public TextView getPatientInsuranceProviderTextView() {
+            return patientInsuranceProviderTextView;
+        }
 
         public ViewHolder(View view, OnPatientClickListener onPatientClickListener) {
             super(view);
@@ -96,6 +123,11 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.ViewHold
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
+        viewHolder.getPatientFirstNameTextView().setText(patientsList.get(position).getFirstName());
+        viewHolder.getPatientLastNameTextView().setText(patientsList.get(position).getLastName());
+        viewHolder.getPatientPhoneTextView().setText(patientsList.get(position).getPhone());
+        viewHolder.getPatientEmailTextView().setText(patientsList.get(position).getEmail());
+
 
 
 

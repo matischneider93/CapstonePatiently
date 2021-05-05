@@ -22,4 +22,11 @@
     <item name="patientEmailTextView" type="id" />
     <item name="patientFirstNameTextView" type="id" />
     <item name="patientLastNameTextView" type="id" />
+    <item name="patientFirstNameEditText" type="id" />
+    <item name="patientLastNameEditText" type="id" />
+    <item name="patientPhoneEditText" type="id" />
+    <item name="patientEmailEditText" type="id" />
+    <item name="patientInsuranceEditText" type="id" />
+    <item name="patientVaccinatedEditText" type="id" />
+    <item name="patientBloodTypeEditText" type="id" />
 </resources>

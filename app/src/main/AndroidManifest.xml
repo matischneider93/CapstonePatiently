@@ -15,6 +15,9 @@
         <activity android:name=".ui.activities.physician.PhysicianAddActivity" />
         <activity android:name=".ui.activities.physician.PhysicianEditActivity" />
         <activity android:name=".ui.activities.physician.PhysicianDetailActivity" />
+        <activity android:name=".ui.activities.patient.PatientAddActivity" />
+        <activity android:name=".ui.activities.patient.PatientEditActivity" />
+        <activity android:name=".ui.activities.patient.PatientDetailActivity" />
         <activity android:name=".ui.activities.patient.PatientsActivity" />
         <activity android:name=".ui.activities.login.LoginActivity" />
         <activity android:name=".ui.activities.MainActivity">

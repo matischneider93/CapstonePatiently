@@ -39,7 +39,7 @@ public class PatientsActivity extends AppCompatActivity implements PatientAdapte
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_physicians);
+        setContentView(R.layout.activity_patients);
         AppDatabase appDatabase = MainActivity.getAppDatabase();
         List<Patient> patients = appDatabase.patientDao().getAllPatients();
         for (Patient patient : patients){ patientsList.add(patient); }
@@ -54,7 +54,7 @@ public class PatientsActivity extends AppCompatActivity implements PatientAdapte
         patientAddButton = findViewById(R.id.patientAddButton);
         patientEditButton = findViewById(R.id.patientUpdateButton);
         patientDetailButton = findViewById(R.id.patientDetailButton);
-        patientDeleteButton = findViewById(R.id.physicianDeleteButton);
+        patientDeleteButton = findViewById(R.id.patientDeleteButton);
 
         patientAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,11 +77,13 @@ public class PatientsActivity extends AppCompatActivity implements PatientAdapte
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), PatientEditActivity.class);
+                intent.putExtra("patient_id", patients.get(selectedPosition).getPatientId());
                 intent.putExtra("patient_first_name", patients.get(selectedPosition).getFirstName());
-                intent.putExtra("physician_last_name", patients.get(selectedPosition).getLastName());
+                intent.putExtra("patient_last_name", patients.get(selectedPosition).getLastName());
                 intent.putExtra("patient_phone", patients.get(selectedPosition).getPhone());
                 intent.putExtra("patient_email", patients.get(selectedPosition).getEmail());
                 intent.putExtra("patient_blood_type", patients.get(selectedPosition).getBloodType());
+                intent.putExtra("patient_vaccinated", patients.get(selectedPosition).getVaccinated());
                 intent.putExtra("patient_insurance_provider", patients.get(selectedPosition).getInsuranceProvider());
                 startActivity(intent);
             }
@@ -92,11 +94,13 @@ public class PatientsActivity extends AppCompatActivity implements PatientAdapte
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), PatientDetailActivity.class);
+                intent.putExtra("patient_id", patients.get(selectedPosition).getPatientId());
                 intent.putExtra("patient_first_name", patients.get(selectedPosition).getFirstName());
-                intent.putExtra("physician_last_name", patients.get(selectedPosition).getLastName());
+                intent.putExtra("patient_last_name", patients.get(selectedPosition).getLastName());
                 intent.putExtra("patient_phone", patients.get(selectedPosition).getPhone());
                 intent.putExtra("patient_email", patients.get(selectedPosition).getEmail());
                 intent.putExtra("patient_blood_type", patients.get(selectedPosition).getBloodType());
+                intent.putExtra("patient_vaccinated", patients.get(selectedPosition).getVaccinated());
                 intent.putExtra("patient_insurance_provider", patients.get(selectedPosition).getInsuranceProvider());
                 startActivity(intent);
             }

@@ -37,6 +37,22 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
         AppointmentAdapter.ViewHolder.OnAppointmentClickListener onAppointmentClickListener;
 
 
+        public TextView getAppointmentTitleTextView() {
+            return appointmentTitleTextView;
+        }
+
+        public TextView getAppointmentTypeTextView() {
+            return appointmentTypeTextView;
+        }
+
+        public TextView getAppointmentTimeTextView() {
+            return appointmentTimeTextView;
+        }
+
+        public TextView getAppointmentDateTextView() {
+            return appointmentDateTextView;
+        }
+
         public ViewHolder(View view, AppointmentAdapter.ViewHolder.OnAppointmentClickListener onAppointmentClickListener) {
             super(view);
             // Define click listener for the ViewHolder's View

@@ -46,11 +46,10 @@ public class MainActivity extends AppCompatActivity {
 
         // when upgrading versions, kill the original tables by using fallbackToDestructiveMigration()
         appDatabase = AppDatabase.getDatabaseInstance(getApplicationContext());
-        appDatabase.physicianDao().insertPhysician(new Physician("Bob", "Lala", "", "", "Back"));
+        appDatabase.physicianDao().insertPhysician(new Physician(2, "n/a", "n/a", "n/a", "n/a", "n/a"));
+        Patient patient = new Patient(2, "n/a", "n/a", "n/a", "n/a","n/a", true,"n/a");
 
-
-
-
+        appDatabase.patientDao().insertPatient(patient);
 
         physiciansButton.setOnClickListener(new View.OnClickListener() {
             @Override
