@@ -12,7 +12,6 @@ import android.widget.Button;
 
 import com.mschneider.patiently.R;
 import com.mschneider.patiently.database.AppDatabase;
-import com.mschneider.patiently.database.view_models.PhysicianViewModel;
 import com.mschneider.patiently.models.Physician;
 import com.mschneider.patiently.ui.activities.MainActivity;
 import com.mschneider.patiently.ui.adapters.PhysicianAdapter;
@@ -46,7 +45,7 @@ public class PhysiciansActivity extends AppCompatActivity implements PhysicianAd
             physiciansRecyclerView.setAdapter(new PhysicianAdapter(physiciansList, this));
 
             // Button Connections
-            physicianAddButton = findViewById(R.id.physicianAddButton);
+            physicianAddButton = findViewById(R.id.physicianEditButton);
             physicianEditButton = findViewById(R.id.physiciansUpdateButton);
             physicianDetailButton = findViewById(R.id.physicianDetailButton);
             physicianDeleteButton = findViewById(R.id.physicianDeleteButton);
@@ -72,6 +71,25 @@ public class PhysiciansActivity extends AppCompatActivity implements PhysicianAd
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), PhysicianEditActivity.class);
+                intent.putExtra("physician_first_name", physicians.get(selectedPosition).getFirstName());
+                intent.putExtra("physician_last_name", physicians.get(selectedPosition).getLastName());
+                intent.putExtra("physician_phone", physicians.get(selectedPosition).getPhone());
+                intent.putExtra("physician_email", physicians.get(selectedPosition).getEmail());
+                intent.putExtra("physician_specialty", physicians.get(selectedPosition).getSpecialty());
+                startActivity(intent);
+            }
+        });
+
+        physicianDetailButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), PhysicianDetailActivity.class);
+                intent.putExtra("physician_first_name", physicians.get(selectedPosition).getFirstName());
+                intent.putExtra("physician_last_name", physicians.get(selectedPosition).getLastName());
+                intent.putExtra("physician_phone", physicians.get(selectedPosition).getPhone());
+                intent.putExtra("physician_email", physicians.get(selectedPosition).getEmail());
+                intent.putExtra("physician_specialty", physicians.get(selectedPosition).getSpecialty());
                 startActivity(intent);
             }
         });
@@ -82,6 +100,5 @@ public class PhysiciansActivity extends AppCompatActivity implements PhysicianAd
     @Override
     public void onPhysicianClick(int position) {
         selectedPosition = position;
-        Log.d("string", String.valueOf(selectedPosition));
     }
 }

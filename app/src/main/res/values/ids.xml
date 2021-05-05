@@ -12,9 +12,14 @@
     <item name="physicianSpecialtyTextView" type="id" />
     <item name="physicianPhoneTextView" type="id" />
     <item name="physicianEmailTextView" type="id" />
-    <item name="physicianAddButton" type="id" />
+    <item name="physicianEditButton" type="id" />
     <item name="appointmentDateTextView" type="id" />
     <item name="appointmentTimeTextView" type="id" />
     <item name="appointmentTypeTextView" type="id" />
     <item name="appointmentTitleTextView" type="id" />
+    <item name="patientVaccinatedTextView" type="id" />
+    <item name="patientPhoneTextView" type="id" />
+    <item name="patientEmailTextView" type="id" />
+    <item name="patientFirstNameTextView" type="id" />
+    <item name="patientLastNameTextView" type="id" />
 </resources>

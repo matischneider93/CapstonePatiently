@@ -34,4 +34,6 @@ public interface PatientDao {
     @Query("SELECT COUNT(*) FROM patients")
     int getPatientCount();
 
+    @Query("DELETE FROM patients WHERE patientId = :selectedPosition")
+    void deleteById(int selectedPosition);
 }

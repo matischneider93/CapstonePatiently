@@ -36,4 +36,6 @@ public interface AppointmentDao {
 
     @Query("DELETE FROM appointments WHERE  appointmentId =:selectedPosition")
     void deleteAppointment(int selectedPosition);
+
+
 }
