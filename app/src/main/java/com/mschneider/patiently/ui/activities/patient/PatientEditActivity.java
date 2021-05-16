@@ -9,10 +9,6 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.mschneider.patiently.R;
-import com.mschneider.patiently.models.Patient;
-import com.mschneider.patiently.models.Physician;
-import com.mschneider.patiently.ui.activities.MainActivity;
-import com.mschneider.patiently.ui.activities.physician.PhysiciansActivity;
 
 public class PatientEditActivity extends AppCompatActivity {
     private EditText patientFirstNameEditText;
@@ -34,7 +30,7 @@ public class PatientEditActivity extends AppCompatActivity {
         patientBloodTypeEditText = findViewById(R.id.patientBloodTypeEditText);
         patientInsuranceEditText = findViewById(R.id.patientInsuranceEditText);
         patientVaccinatedEditText = findViewById(R.id.patientVaccinatedEditText);
-        patientEditButton = findViewById(R.id.patientEditButton);
+        patientEditButton = findViewById(R.id.patientUpdateButton);
 
         Intent intent = getIntent();
         String patientFirstName = intent.getStringExtra("patient_first_name");
@@ -42,6 +38,7 @@ public class PatientEditActivity extends AppCompatActivity {
         String patientPhone = intent.getStringExtra("patient_phone");
         String patientEmail = intent.getStringExtra("patient_email");
         String patientBloodType = intent.getStringExtra("patient_blood_type");
+        String patientVaccinated = intent.getStringExtra("patient_vaccinated");
         String patientInsurance = intent.getStringExtra("patient_insurance");
 
         patientFirstNameEditText.setHint(patientFirstName);
@@ -49,6 +46,7 @@ public class PatientEditActivity extends AppCompatActivity {
         patientPhoneEditText.setHint(patientPhone);
         patientEmailEditText.setHint(patientEmail);
         patientBloodTypeEditText.setHint(patientBloodType);
+        patientVaccinatedEditText.setHint(patientVaccinated);
         patientInsuranceEditText.setHint(patientInsurance);
 
 

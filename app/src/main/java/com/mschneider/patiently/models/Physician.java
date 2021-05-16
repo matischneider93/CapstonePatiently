@@ -7,6 +7,7 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "physicians")
 public class Physician {
+    @ColumnInfo
     @PrimaryKey(autoGenerate = true)
     public int physicianId;
     @ColumnInfo(name = "first_name")
@@ -39,8 +40,9 @@ public class Physician {
     }
 
     public Physician() {
-        this.firstName = "N/A";
-        this.lastName = "N/A";
+        this.physicianId = 1;
+        this.firstName = "test";
+        this.lastName = "test";
         this.email = "N/A";
         this.phone = "N/A";
         this.specialty = "N/A";

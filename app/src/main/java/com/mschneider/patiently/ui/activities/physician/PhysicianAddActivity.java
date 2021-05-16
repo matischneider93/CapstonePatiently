@@ -18,7 +18,7 @@ public class PhysicianAddActivity extends AppCompatActivity {
     private EditText physicianPhoneEditText;
     private EditText physicianEmailEditText;
     private EditText physicianSpecialtyEditText;
-    private Button physicianUpdateButton; // Add button
+    private Button physicianAddButton; // Add button
 
 
     @Override
@@ -30,10 +30,10 @@ public class PhysicianAddActivity extends AppCompatActivity {
         physicianPhoneEditText = findViewById(R.id.physicianPhoneEditText);
         physicianEmailEditText = findViewById(R.id.physicianEmailEditText);
         physicianSpecialtyEditText = findViewById(R.id.physicianSpecialtyEditText);
-        physicianUpdateButton = findViewById(R.id.physicianEditButton);
+        physicianAddButton = findViewById(R.id.addPhysicianButton);
 
 
-        physicianUpdateButton.setOnClickListener(new View.OnClickListener() {
+        physicianAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Physician newPhysician = new Physician(physicianFirstNameEditText.getText().toString(),

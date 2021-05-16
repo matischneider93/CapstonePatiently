@@ -34,8 +34,6 @@ public class PatientsActivity extends AppCompatActivity implements PatientAdapte
     private Button patientDeleteButton;
     private int selectedPosition;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +45,7 @@ public class PatientsActivity extends AppCompatActivity implements PatientAdapte
         patientsRecyclerView = findViewById(R.id.patientsRecyclerView);
         patientsRecyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+
         patientsRecyclerView.setLayoutManager(layoutManager);
         patientsRecyclerView.setAdapter(new PatientAdapter(patientsList, this));
 
@@ -83,7 +82,7 @@ public class PatientsActivity extends AppCompatActivity implements PatientAdapte
                 intent.putExtra("patient_phone", patients.get(selectedPosition).getPhone());
                 intent.putExtra("patient_email", patients.get(selectedPosition).getEmail());
                 intent.putExtra("patient_blood_type", patients.get(selectedPosition).getBloodType());
-                intent.putExtra("patient_vaccinated", patients.get(selectedPosition).getVaccinated());
+                intent.putExtra("patient_vaccinated", patients.get(selectedPosition).getVaccinated().toString());
                 intent.putExtra("patient_insurance_provider", patients.get(selectedPosition).getInsuranceProvider());
                 startActivity(intent);
             }
@@ -100,14 +99,13 @@ public class PatientsActivity extends AppCompatActivity implements PatientAdapte
                 intent.putExtra("patient_phone", patients.get(selectedPosition).getPhone());
                 intent.putExtra("patient_email", patients.get(selectedPosition).getEmail());
                 intent.putExtra("patient_blood_type", patients.get(selectedPosition).getBloodType());
-                intent.putExtra("patient_vaccinated", patients.get(selectedPosition).getVaccinated());
+                intent.putExtra("patient_vaccinated", patients.get(selectedPosition).getVaccinated().toString());
                 intent.putExtra("patient_insurance_provider", patients.get(selectedPosition).getInsuranceProvider());
                 startActivity(intent);
             }
         });
 
     }
-
 
     @Override
     public void onPatientClick(int position) {

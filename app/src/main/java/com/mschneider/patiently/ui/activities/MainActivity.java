@@ -46,10 +46,22 @@ public class MainActivity extends AppCompatActivity {
 
         // when upgrading versions, kill the original tables by using fallbackToDestructiveMigration()
         appDatabase = AppDatabase.getDatabaseInstance(getApplicationContext());
-        appDatabase.physicianDao().insertPhysician(new Physician(2, "n/a", "n/a", "n/a", "n/a", "n/a"));
-        Patient patient = new Patient(2, "n/a", "n/a", "n/a", "n/a","n/a", true,"n/a");
+        Patient newPatient = new Patient(1, "Sharon", "Baba", "sharonbaba@gmail.com", "6178787", "O", true, "BlueCross");
+        appDatabase.patientDao().insertPatient(newPatient);
 
-        appDatabase.patientDao().insertPatient(patient);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         physiciansButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         patientsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,7 +94,16 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
+    // Function to clear app database entries
+    private void clearAppDatabases() {
+        appDatabase.appointmentDao().deleteAllAppointments();
+        appDatabase.patientDao().deleteAllPatients();
+        appDatabase.physicianDao().deleteAllPhysicians();
+    }
+
     public static AppDatabase getAppDatabase() {
         return appDatabase;
     }
+
 }

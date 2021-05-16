@@ -2,6 +2,7 @@ package com.mschneider.patiently.models;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import java.util.Date;
@@ -23,6 +24,53 @@ public class Appointment {
     private String appointmentDate;
     @ColumnInfo(name = "appointment_time")
     private String appointmentTime;
+
+
+
+    @Ignore
+    public Appointment(int appointmentId, int physicianId, int patientId, String appointmentTitle, String appointmentType, String appointmentDate, String appointmentTime) {
+        this.appointmentId = appointmentId;
+        this.physicianId = physicianId;
+        this.patientId = patientId;
+        this.appointmentTitle = appointmentTitle;
+        this.appointmentType = appointmentType;
+        this.appointmentDate = appointmentDate;
+        this.appointmentTime = appointmentTime;
+    }
+    @Ignore
+    public Appointment(int physicianId, int patientId, String appointmentTitle, String appointmentType, String appointmentDate, String appointmentTime) {
+        this.physicianId = physicianId;
+        this.patientId = patientId;
+        this.appointmentTitle = appointmentTitle;
+        this.appointmentType = appointmentType;
+        this.appointmentDate = appointmentDate;
+        this.appointmentTime = appointmentTime;
+    }
+    @Ignore
+    public Appointment(int patientId, String appointmentTitle, String appointmentType, String appointmentDate, String appointmentTime) {
+        this.patientId = patientId;
+        this.appointmentTitle = appointmentTitle;
+        this.appointmentType = appointmentType;
+        this.appointmentDate = appointmentDate;
+        this.appointmentTime = appointmentTime;
+    }
+
+    public Appointment(String appointmentTitle, String appointmentType, String appointmentDate, String appointmentTime) {
+        this.appointmentTitle = appointmentTitle;
+        this.appointmentType = appointmentType;
+        this.appointmentDate = appointmentDate;
+        this.appointmentTime = appointmentTime;
+    }
+
+    public Appointment() {
+        this.appointmentId = 1;
+        this.physicianId = 1;
+        this.patientId = 1;
+        this.appointmentTitle = "N/A";
+        this.appointmentType = "N/A";
+        this.appointmentDate = "N/A";
+        this.appointmentTime = "N/A";
+    }
 
     public int getAppointmentId() {
         return appointmentId;

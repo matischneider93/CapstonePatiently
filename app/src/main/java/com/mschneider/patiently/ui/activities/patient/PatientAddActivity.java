@@ -10,9 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.mschneider.patiently.R;
 import com.mschneider.patiently.models.Patient;
-import com.mschneider.patiently.models.Physician;
 import com.mschneider.patiently.ui.activities.MainActivity;
-import com.mschneider.patiently.ui.activities.physician.PhysiciansActivity;
 
 public class PatientAddActivity extends AppCompatActivity {
     private EditText patientFirstNameEditText;
@@ -22,7 +20,8 @@ public class PatientAddActivity extends AppCompatActivity {
     private EditText patientVaccinatedEditText;
     private EditText patientInsuranceEditText;
     private EditText patientBloodTypeEditText;
-    private Button patientUpdateButton; // Add button
+    private Button patientAddButton; // Add button
+    private Button patientsBackButton; // Add button
 
 
     @Override
@@ -36,22 +35,41 @@ public class PatientAddActivity extends AppCompatActivity {
         patientInsuranceEditText = findViewById(R.id.patientInsuranceEditText);
         patientVaccinatedEditText = findViewById(R.id.patientVaccinatedEditText);
         patientBloodTypeEditText = findViewById(R.id.patientBloodTypeEditText);
-        patientUpdateButton = findViewById(R.id.patientUpdateButton);
+        patientAddButton = findViewById(R.id.addPatientButton);
+        patientsBackButton = findViewById(R.id.patientsBackButton); // leads to main patient screen
 
 
 
 
         // vaccinated status is boolean set default as true
-        patientUpdateButton.setOnClickListener(new View.OnClickListener() {
+        patientAddButton.setOnClickListener(new View.OnClickListener() {
+
+            boolean vaccinatedBoolean;
             @Override
             public void onClick(View v) {
-                Patient newPatient = new Patient(2, patientFirstNameEditText.getText().toString(),
-                        patientLastNameEditText.getText().toString(),patientEmailEditText.getText().toString(), patientPhoneEditText.getText().toString(), patientBloodTypeEditText.getText().toString(), true, patientInsuranceEditText.getText().toString());
+                if (patientVaccinatedEditText.getText().toString().contains("yes")){
+                    vaccinatedBoolean = true;
+                } else {
+                    vaccinatedBoolean = false;
+                }
+                patientVaccinatedEditText.getText().toString();
+                Patient newPatient = new Patient(1, patientFirstNameEditText.getText().toString(),
+                        patientLastNameEditText.getText().toString(),patientEmailEditText.getText().toString(), patientPhoneEditText.getText().toString(), patientBloodTypeEditText.getText().toString(), vaccinatedBoolean, patientInsuranceEditText.getText().toString());
                 MainActivity.getAppDatabase().patientDao().insertPatient(newPatient);
                 Intent intent = new Intent(getApplicationContext(), PatientsActivity.class);
                 startActivity(intent);
             }
         });
 
+        patientsBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), PatientsActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
+
+
 }

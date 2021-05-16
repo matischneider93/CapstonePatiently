@@ -29,4 +29,17 @@
     <item name="patientInsuranceEditText" type="id" />
     <item name="patientVaccinatedEditText" type="id" />
     <item name="patientBloodTypeEditText" type="id" />
+    <item name="patientBloodTypeDetailText" type="id" />
+    <item name="patientsBackButton" type="id" />
+    <item name="patientVaccinatedDetailText" type="id" />
+    <item name="patientFirstNameDetailText" type="id" />
+    <item name="patientLastNameDetailText" type="id" />
+    <item name="patientPhoneDetailText" type="id" />
+    <item name="patientEmailDetailText" type="id" />
+    <item name="patientInsuranceDetailText" type="id" />
+    <item name="appointmentTimeEditText" type="id" />
+    <item name="appointmentsBackButton" type="id" />
+    <item name="appointmentTitleEditText" type="id" />
+    <item name="appointmentTypeEditText" type="id" />
+    <item name="appointmentDateEditText" type="id" />
 </resources>
