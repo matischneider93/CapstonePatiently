@@ -6,6 +6,7 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import com.mschneider.patiently.models.Patient;
 
@@ -18,6 +19,10 @@ public interface PatientDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertPatients(List<Patient> patients);
+
+
+    @Update
+    void updatePatient(Patient patient);
 
     @Delete
     void deletePatient(Patient Patient);

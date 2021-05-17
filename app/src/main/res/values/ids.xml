@@ -42,4 +42,9 @@
     <item name="appointmentTitleEditText" type="id" />
     <item name="appointmentTypeEditText" type="id" />
     <item name="appointmentDateEditText" type="id" />
+    <item name="appointmentTitleDetailText" type="id" />
+    <item name="appointmentTypeDetailText" type="id" />
+    <item name="appointmentDateDetailText" type="id" />
+    <item name="appointmentTimeDetailText" type="id" />
+    <item name="backAppointmentsButton" type="id" />
 </resources>

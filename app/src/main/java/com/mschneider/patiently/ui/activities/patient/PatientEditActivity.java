@@ -9,6 +9,10 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.mschneider.patiently.R;
+import com.mschneider.patiently.models.Patient;
+import com.mschneider.patiently.models.Physician;
+import com.mschneider.patiently.ui.activities.MainActivity;
+import com.mschneider.patiently.ui.activities.physician.PhysiciansActivity;
 
 public class PatientEditActivity extends AppCompatActivity {
     private EditText patientFirstNameEditText;
@@ -30,7 +34,7 @@ public class PatientEditActivity extends AppCompatActivity {
         patientBloodTypeEditText = findViewById(R.id.patientBloodTypeEditText);
         patientInsuranceEditText = findViewById(R.id.patientInsuranceEditText);
         patientVaccinatedEditText = findViewById(R.id.patientVaccinatedEditText);
-        patientEditButton = findViewById(R.id.patientUpdateButton);
+        patientEditButton = findViewById(R.id.patientEditButton);
 
         Intent intent = getIntent();
         String patientFirstName = intent.getStringExtra("patient_first_name");
@@ -54,7 +58,23 @@ public class PatientEditActivity extends AppCompatActivity {
         patientEditButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (patientFirstNameEditText.getText().toString().isEmpty()){ patientFirstNameEditText.setText(patientFirstName); }
+                if (patientLastNameEditText.getText().toString().isEmpty()){ patientLastNameEditText.setText(patientLastName); }
+                if (patientEmailEditText.getText().toString().isEmpty()){ patientEmailEditText.setText(patientEmail); }
+                if (patientPhoneEditText.getText().toString().isEmpty()){ patientPhoneEditText.setText(patientPhone); }
+                if (patientBloodTypeEditText.getText().toString().isEmpty()){ patientBloodTypeEditText.setText(patientBloodType); }
+                if (patientVaccinatedEditText.getText().toString().isEmpty()){ patientVaccinatedEditText.setText(patientVaccinated); }
+                if (patientInsuranceEditText.getText().toString().isEmpty()){ patientInsuranceEditText.setText(patientInsurance); }
 
+                Patient newPatient = new Patient(1, patientFirstNameEditText.getText().toString(),
+                        patientLastNameEditText.getText().toString(),
+                        patientPhoneEditText.getText().toString(),
+                        patientEmailEditText.getText().toString(),
+                        patientBloodTypeEditText.getText().toString(),
+                        true, patientInsuranceEditText.getText().toString());
+                MainActivity.getAppDatabase().patientDao().updatePatient(newPatient);
+                Intent intent = new Intent(getApplicationContext(), PatientsActivity.class);
+                startActivity(intent);
             }
         });
     }

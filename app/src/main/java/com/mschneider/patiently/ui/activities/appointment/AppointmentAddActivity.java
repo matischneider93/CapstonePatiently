@@ -95,6 +95,9 @@ public class AppointmentAddActivity extends AppCompatActivity {
         appointmentAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Appointment appointment = new Appointment(1,1,appointmentTitleEditText.getText().toString(),
+                        appointmentTypeEditText.getText().toString(),appointmentDateEditText.getText().toString(), appointmentTimeEditText.getText().toString());
+                MainActivity.getAppDatabase().appointmentDao().insertAppointment(appointment);
                 Intent intent = new Intent(getApplicationContext(), AppointmentsActivity.class);
                 startActivity(intent);
             }

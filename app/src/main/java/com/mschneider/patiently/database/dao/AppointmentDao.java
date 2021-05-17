@@ -6,6 +6,7 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import com.mschneider.patiently.models.Appointment;
 
@@ -15,6 +16,9 @@ import java.util.List;
 public interface AppointmentDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAppointment(Appointment appointment);
+
+    @Update
+    void updateAppointment(Appointment appointment);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAppointments(List<Appointment> appointments);

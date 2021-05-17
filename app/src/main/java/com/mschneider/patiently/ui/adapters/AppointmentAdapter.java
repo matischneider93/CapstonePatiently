@@ -106,6 +106,11 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
+        viewHolder.getAppointmentTitleTextView().setText(appointmentsList.get(position).getAppointmentTitle());
+        viewHolder.getAppointmentTypeTextView().setText(appointmentsList.get(position).getAppointmentType());
+        viewHolder.getAppointmentDateTextView().setText(appointmentsList.get(position).getAppointmentDate());
+        viewHolder.getAppointmentTimeTextView().setText(appointmentsList.get(position).getAppointmentTime());
+
 
 
 

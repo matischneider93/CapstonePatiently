@@ -11,7 +11,9 @@
         android:theme="@style/Theme.Patiently">
         <activity android:name=".ui.activities.reports.ReportsActivity"></activity>
         <activity android:name=".ui.activities.appointment.AppointmentsActivity" />
+        <activity android:name=".ui.activities.appointment.AppointmentEditActivity" />
         <activity android:name=".ui.activities.appointment.AppointmentAddActivity" />
+        <activity android:name=".ui.activities.appointment.AppointmentDetailActivity" />
         <activity android:name=".ui.activities.physician.PhysiciansActivity" />
         <activity android:name=".ui.activities.physician.PhysicianAddActivity" />
         <activity android:name=".ui.activities.physician.PhysicianEditActivity" />

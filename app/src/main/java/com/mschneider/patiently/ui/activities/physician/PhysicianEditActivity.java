@@ -47,12 +47,17 @@ public class PhysicianEditActivity extends AppCompatActivity {
         physicianEditButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (physicianFirstNameEditText.getText().toString().isEmpty()){ physicianFirstNameEditText.setText(physicianFirstName); }
+                if (physicianLastNameEditText.getText().toString().isEmpty()){ physicianLastNameEditText.setText(physicianLastName); }
+                if (physicianEmailEditText.getText().toString().isEmpty()){ physicianEmailEditText.setText(physicianEmail); }
+                if (physicianPhoneEditText.getText().toString().isEmpty()){ physicianPhoneEditText.setText(physicianPhone); }
+                if (physicianSpecialtyEditText.getText().toString().isEmpty()){ physicianSpecialtyEditText.setText(physicianSpecialty); }
                 Physician newPhysician = new Physician(physicianFirstNameEditText.getText().toString(),
                         physicianLastNameEditText.getText().toString(),
                         physicianPhoneEditText.getText().toString(),
                         physicianEmailEditText.getText().toString(),
                         physicianSpecialtyEditText.getText().toString());
-                MainActivity.getAppDatabase().physicianDao().insertPhysician(newPhysician);
+                MainActivity.getAppDatabase().physicianDao().updatePhysician(newPhysician);
                 Intent intent = new Intent(getApplicationContext(), PhysiciansActivity.class);
                 startActivity(intent);
             }

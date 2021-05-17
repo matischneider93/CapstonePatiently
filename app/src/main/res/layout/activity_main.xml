@@ -4,66 +4,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#3C00F3ED"
     tools:context=".ui.activities.MainActivity">
-
-    <Button
-        android:id="@+id/physiciansButton"
-        android:layout_width="168dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="417dp"
-        android:backgroundTint="#2196F3"
-        android:text="Physicians"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/patientsButton"
-        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/patientsButton"
         android:layout_width="167dp"
         android:layout_height="43dp"
-        android:layout_marginStart="162dp"
-        android:layout_marginTop="194dp"
-        android:layout_marginEnd="161dp"
-        android:layout_marginBottom="489dp"
-        android:backgroundTint="#2196F3"
+        android:layout_marginStart="119dp"
+        android:layout_marginTop="328dp"
+        android:layout_marginEnd="125dp"
+        android:layout_marginBottom="360dp"
+        android:backgroundTint="#FF00F3ED"
         android:text="Patients"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/physiciansButton"
+        android:layout_width="168dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="119dp"
+        android:layout_marginTop="243dp"
+        android:layout_marginEnd="124dp"
+        android:layout_marginBottom="437dp"
+        android:backgroundTint="#FF00F3ED"
+        android:text="Physicians"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/appointmentsButton"
         android:layout_width="173dp"
         android:layout_height="56dp"
-        android:layout_marginStart="162dp"
-        android:layout_marginTop="29dp"
-        android:layout_marginEnd="161dp"
-        android:layout_marginBottom="340dp"
-        android:backgroundTint="#2196F3"
+        android:layout_marginStart="119dp"
+        android:layout_marginTop="413dp"
+        android:layout_marginEnd="119dp"
+        android:layout_marginBottom="262dp"
+        android:backgroundTint="#FF00F3ED"
         android:text="Appointments"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/physiciansButton" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/reportsButton"
-        android:layout_width="173dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="117dp"
-        android:layout_marginEnd="121dp"
-        android:backgroundTint="#2196F3"
-        android:text="Reports"
+    <ImageView
+        android:id="@+id/logoView"
+        android:layout_width="157dp"
+        android:layout_height="188dp"
+        android:layout_marginStart="141dp"
+        android:layout_marginTop="61dp"
+        android:layout_marginEnd="142dp"
+        android:layout_marginBottom="542dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.629" />
+        app:srcCompat="@drawable/patiently_logo" />
 </androidx.constraintlayout.widget.ConstraintLayout>

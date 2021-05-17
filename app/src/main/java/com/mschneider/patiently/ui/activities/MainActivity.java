@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.mschneider.patiently.R;
 import com.mschneider.patiently.database.AppDatabase;
@@ -38,16 +39,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        Button physiciansButton, patientsButton, appointmentsButton, reportsButton;
+        Button physiciansButton, patientsButton, appointmentsButton;
+        ImageView logo;
         physiciansButton = (Button) findViewById(R.id.physiciansButton);
         patientsButton = (Button) findViewById(R.id.patientsButton);
         appointmentsButton = (Button) findViewById(R.id.appointmentsButton);
-        reportsButton = (Button) findViewById(R.id.reportsButton);
+        logo = (ImageView) findViewById(R.id.logoView);
+
+
 
         // when upgrading versions, kill the original tables by using fallbackToDestructiveMigration()
         appDatabase = AppDatabase.getDatabaseInstance(getApplicationContext());
-        Patient newPatient = new Patient(1, "Sharon", "Baba", "sharonbaba@gmail.com", "6178787", "O", true, "BlueCross");
-        appDatabase.patientDao().insertPatient(newPatient);
+
+        logo.setImageResource(R.drawable.patiently_logo);
 
 
 
@@ -85,13 +89,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        reportsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ReportsActivity.class);
-                startActivity(intent);
-            }
-        });
+
     }
 
 
